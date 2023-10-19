@@ -1,5 +1,6 @@
 Feature: Logout
 
+  @Logout @ALL
   Scenario: Logout
     Given The User logged in to the Sauce Demo application
     When The user click on the 'Logout' button

@@ -26,18 +26,18 @@ public class login {
         driver.get(baseUrl);
 
         //Assertion
-        String loginPageAssert = driver.findElement(By.xpath("//*[@id='header_container']/div[1]/div[2]/div")).getText();
+        String loginPageAssert = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[1]")).getText();
         Assert.assertEquals(loginPageAssert, "Swag Labs");
     }
 
     @When("the user enter valid username")
     public void the_user_enter_valid_username() {
-        driver.findElement(By.id("user-name")).sendKeys("standard_user");
+        driver.findElement(By.xpath("//*[@id='user-name']")).sendKeys("standard_user");
     }
 
     @And("the user enter valid password")
     public void the_user_enter_valid_password() {
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
+        driver.findElement(By.xpath("//*[@id='password']")).sendKeys("secret_sauce");
     }
 
     @And("the user click on the login button")
@@ -66,13 +66,13 @@ public class login {
         driver.close();
     }
 
-    @When("the user enter (.*) username$")
-    public void the_user_enter_username(String username) {
+    @When("the user enter (.*) username TDD$")
+    public void the_user_enter_username_TDD(String username) {
         driver.findElement(By.id("user-name")).sendKeys(username);
     }
 
-    @And("the user enter (.*) password$")
-    public void the_user_enter_password(String password) {
+    @And("the user enter (.*) password TDD$")
+    public void the_user_enter_password_TDD(String password) {
         driver.findElement(By.id("password")).sendKeys(password);
     }
 

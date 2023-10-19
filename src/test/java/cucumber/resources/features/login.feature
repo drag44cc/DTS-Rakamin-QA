@@ -1,6 +1,6 @@
 Feature: Login to Sauce Demo
 
-  @Regression @Positive
+  @Regression @Positive @ALL
   Scenario: User logs in with valid credentials
     Given the user is on the Sauce Demo login page
     When the user enter valid username
@@ -8,7 +8,7 @@ Feature: Login to Sauce Demo
     And the user click on the login button
     Then the user logged in to the Sauce Demo application
 
-  @Regression @Negative
+  @Regression @Negative @ALL
   Scenario: User logs in with invalid credentials
     Given the user is on the Sauce Demo login page
     When the user enter invalid username
@@ -16,11 +16,11 @@ Feature: Login to Sauce Demo
     And the user click on the login button
     Then the user see an error message that says
 
-  @TDD
-  Scenario Outline: User logs in with valid credentials
+  @TDD @ALL
+  Scenario Outline: User logs in with valid credentials TDD
     Given the user is on the Sauce Demo login page
-    When the user enter <username> username
-    And the user enter <password> password
+    When the user enter <username> username TDD
+    And the user enter <password> password TDD
     And the user click on the login button
     Then the user <status> logged in to the Sauce Demo application
     Examples:

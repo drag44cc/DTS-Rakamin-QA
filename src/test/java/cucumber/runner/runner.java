@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
         features = "src/test/java/cucumber/resources/features",
         glue = "cucumber.stepDef",
         plugin = {"html:target/HTML_report.html"},
-        tags = "@TDD"
+        tags = "@ALL"
 )
 
-public class runLogin {
+public class runner {
 }
